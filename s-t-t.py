@@ -10,13 +10,10 @@ speech_to_text = SpeechToTextV1(
 
 speech_to_text.set_service_url('https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/179661be-e3fe-4209-bf77-46df2ba958ab')
 
-with open(join(dirname(__file__), './.', 'audio-file2.mp3'),
-               'rb') as audio_file:
+with open(join(dirname(__file__), './.', 'new_file.mp3'),'rb') as audio_file:
     speech_recognition_results = speech_to_text.recognize(
         audio=audio_file,
         content_type='audio/mp3',
-        word_alternatives_threshold=0.9,
-        keywords=['colorado', 'tornado', 'tornadoes'],
-        keywords_threshold=0.5
+        
     ).get_result()
 print(json.dumps(speech_recognition_results, indent=2))

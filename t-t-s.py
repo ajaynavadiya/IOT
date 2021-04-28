@@ -12,7 +12,7 @@ text_to_speech.set_service_url('https://api.eu-gb.text-to-speech.watson.cloud.ib
 with open('new_file.mp3', 'wb') as audio_file:
     audio_file.write(
         text_to_speech.synthesize(
-            'Hello all how are you hope every one is doing well ',
+            'Hello all how are you hope every one is doing well good morning hemangini maam ',
             voice='en-US_AllisonV3Voice',
             accept='audio/mp3'        
         ).get_result().content)
